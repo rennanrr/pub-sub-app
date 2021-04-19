@@ -1,4 +1,4 @@
-import io, { Socket } from 'socket.io-client';
+import io from 'socket.io-client';
 import pushNotification from '../Utils/notifications';
 class SocketService {
   socket: any;
@@ -21,7 +21,7 @@ class SocketService {
     return this.socket.on('message', (msg: string) => {
       pushNotification(msg);
       console.log(msg);
-      toastFunction('Received a message from WebSocket', msg, 'info', 'bottom-center');
+      toastFunction('Received a message from WebSocket', msg, 'info', 'top-left');
     });
   }
 }

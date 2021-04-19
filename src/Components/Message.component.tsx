@@ -1,9 +1,10 @@
 import { FormEvent, useEffect, useState } from 'react';
 import Api from '../Services/api';
 import SocketService from '../Services/Socket';
-import ReactNotification, { ReactNotificationOptions } from 'react-notifications-component'
 import { store } from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css'
+import { Content, InputStyled, TitleStyled } from './Message.component.style';
+import { Separator, ButtonStyled } from '../App.component.style';
 
 const MessageComponent = () => {
   const [stringOne, setStringOne] = useState<string>('');
@@ -34,16 +35,19 @@ const MessageComponent = () => {
   }, []);
 
   return (
-    <div className='App'>
-      <ReactNotification />
-      <header className='App-header'>
+    <>
         <form onSubmit={handleSend}>
-          <input placeholder='String one' onChange={e => setStringOne(e.target.value)} value={stringOne} />
-          <input placeholder='String two' onChange={e => setStringTwo(e.target.value)} value={stringTwo} />
-          <button type='submit'>Submit strings</button>
+          <TitleStyled> Galley Solution Exercise Test </TitleStyled>
+          <Content>
+          <InputStyled placeholder='String One' onChange={e => setStringOne(e.target.value)} value={stringOne} />
+          <Separator/>
+          <InputStyled placeholder='String Two' onChange={e => setStringTwo(e.target.value)} value={stringTwo} />
+          <Separator/>
+          <ButtonStyled type='submit'>Submit strings</ButtonStyled>
+          </Content>
         </form>
-      </header>
-    </div>
+        Author: Rennan Ribas
+    </>
   );
 }
 
@@ -58,7 +62,7 @@ const showToast = (
     message: message,
     type: type,
     insert: 'top',
-    container: position ? position : 'top-center',
+    container: position ? position : 'top-left',
     animationIn: ['animate__animated', 'animate__fadeIn'],
     animationOut: ['animate__animated', 'animate__fadeOut'],
     dismiss: {
