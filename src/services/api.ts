@@ -3,7 +3,7 @@ import axios from 'axios';
 import { logout } from '../Actions/userActions'; */
 
 const Api = axios.create({
-  baseURL: process.env.API_URL || "http://localhost:3000/api/v1/"
+  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:3000/api/v1/'
 });
 
 Api.interceptors.request.use(async config => {

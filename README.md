@@ -1,4 +1,16 @@
-# Getting Started with Create React App
+# Galley Solutions exercise - FrontEnd
+
+## Tech Stack
+- React
+- Axios
+- Socket.io-client
+
+## Environment Variables
+In this project, there is two env variables (paths):
+- REACT_APP_WS_URL (Default: 'http://localhost:4555')
+- REACT_APP_API_URL (Default: 'http://localhost:3000/api/v1/')
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
